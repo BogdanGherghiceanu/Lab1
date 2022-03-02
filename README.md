@@ -1,7 +1,7 @@
 # Lab1
 # CC - tema Lab1
-# nume: Gherghiceanu Bogdan 3E3
-# nr matricol 310910401ESL191031
+ nume: Gherghiceanu Bogdan 3E3
+ nr matricol 310910401ESL191031
 
 1. Aplicatia este creearea de comenzi cu produse agricole.
 
