@@ -9,7 +9,7 @@ class ApiFacturis:
         jsonGetClienti={
             "APIkey": "9d766ddf5ee42d146c477222c0ff17a5",
             "u": "admin",
-            "p": "eusuntjohn",
+            "p": "",
             "c": "38935296",
             "met": "Produse",
             "act": "Get"
@@ -104,7 +104,7 @@ class ApiFacturis:
     #     response_default = {
     #         "APIkey": "9d766ddf5ee42d146c477222c0ff17a5",
     #         "u": "admin",
-    #         "p": "eusuntjohn",
+    #         "p": "",
     #         "c": "38935296",
     #         "met": "Facturi",
     #         "act": "Ins",
@@ -185,7 +185,7 @@ class ApiFacturis:
 # json_file = {
 #     "APIkey": "9d766ddf5ee42d146c477222c0ff17a5",
 #     "u": "admin",
-#     "p": "eusuntjohn",
+#     "p": "",
 #     "c": "38935296",
 #     "met": "Clienti",
 #     "act": "Ins",
