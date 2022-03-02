@@ -30,24 +30,30 @@ class ApiSheets:
 def main(readProdus):
     prodString = ""
     sheets=ApiSheets()
+
     for i in range(1, 6):
-        a = int(str(readProdus[f'{i}'])[2:-2])
-        id=i
-        quantityNedeed=a
-        for row in sheets.loadJson():
-            if row['id']==id:
-                stock=row['Cantitate(tone)']
-                denumire=row['Denumire']
-                if quantityNedeed==0:
-                    prodString+=""
-                else:
-                    if quantityNedeed>stock:
-                        print(f'LOG_SHEETSAPI {denumire} nu mai este in stoc')
-                        prodString+= f'\n{denumire} nu mai este in stoc';
+        try:
+            a = int(str(readProdus[f'{i}'])[2:-2])
+            print(readProdus)
+            print(a)
+            id=i
+            quantityNedeed=a
+            for row in sheets.loadJson():
+                if row['id']==id:
+                    stock=row['Cantitate(tone)']
+                    denumire=row['Denumire']
+                    if quantityNedeed==0:
+                        prodString+=""
                     else:
-                        sheets.updateQuantity(id=id, quantity=stock-quantityNedeed)
-                        print(f'LOG_SHEETSAPI {denumire} : {quantityNedeed} tone confirmat')
-                        prodString+= f'\n{denumire} : {quantityNedeed} tone confirmat'
+                        if quantityNedeed>stock:
+                            print(f'LOG_SHEETSAPI {denumire} nu mai este in stoc')
+                            prodString+= f'\n{denumire} nu mai este in stoc';
+                        else:
+                            sheets.updateQuantity(id=id, quantity=stock-quantityNedeed)
+                            print(f'LOG_SHEETSAPI {denumire} : {quantityNedeed} tone confirmat')
+                            prodString+= f'\n{denumire} : {quantityNedeed} tone confirmat'
+        except:
+            print("LOG empty ")
     return prodString
 
 if __name__ == '__main__':
